@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +14,18 @@ use App\Http\Controllers\StoreController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('store.index');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/', [StoreController::class, 'index'])->name('store.index');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/create', [StoreController::class, 'create'])->name('store.create');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-Route::post('/store', [StoreController::class, 'store'])->name('store.store');
+require __DIR__.'/auth.php';

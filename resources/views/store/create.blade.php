@@ -44,7 +44,7 @@
 
     <div class="container">
         <div class="form-con">
-            <form action="{{ route('store.store') }}" method="POST">
+            <form action="{{ route('store.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group">
@@ -66,6 +66,11 @@
                 <div class="form-group">
                     <label for="exampleInputEmail1">Price</label>
                     <input type="number" class="form-control" name="price" placeholder="Enter clothe price">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Image</label>
+                    <input type="file" class="form-control" name="image" placeholder="Enter clothe image">
                 </div>
 
 

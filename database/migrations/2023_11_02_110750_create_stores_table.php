@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('clothe_desc')->nullable();
             $table->string('clothe_quantity')->nullable();
             $table->string('clothe_price');
+            $table->string('clothe_img');
             $table->timestamps();
         });
     }

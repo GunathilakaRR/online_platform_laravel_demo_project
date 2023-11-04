@@ -65,12 +65,12 @@
             <div class="card-container">
                 @foreach ($stores as $store)
                     <div class="card">
-                        <img src="https://cdn11.bigcommerce.com/s-rxzabllq/images/stencil/1280x1280/products/1504/12422/1HT_AQUA-Plain-100-Cotton-Tshirt-Online__30618.1643763653.jpg?c=2"
+                        <img src={{asset('uploads/stores/'.$store->clothe_img)}}
                             alt="" class="card-img-top">
                         <div class="card-content">
                             <h3>{{ $store->clothe_name }}</h3>
                             <p>{{ $store->clothe_desc }}</p>
-                            <p>{{ $store->clothe_quantity }}</p>
+                            <p>{{ $store->clothe_price }}</p>
                         </div>
                     </div>
                 @endforeach

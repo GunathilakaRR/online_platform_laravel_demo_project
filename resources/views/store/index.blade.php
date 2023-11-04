@@ -56,8 +56,8 @@
             <div class="row slogan">
               <div class="col-lg-6">
                 <h1>BLOSSOM</h1>
-                <a href="" class="btn btn-light btn-lg"><i class="fa-solid fa-user-plus"></i> Register</a>
-                <a href="" class="btn btn-dark btn-lg"><i class="fa-solid fa-user"></i>  Login</a>
+                <a href="{{ route('register') }}" class="btn btn-light btn-lg"><i class="fa-solid fa-user-plus"></i> Register</a>
+                <a href="{{ route('login') }}" class="btn btn-dark btn-lg"><i class="fa-solid fa-user"></i>  Login</a>
               </div>
 
               <div class="col-lg-6">

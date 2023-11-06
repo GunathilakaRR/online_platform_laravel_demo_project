@@ -13,68 +13,79 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Document</title>
 
-    <link rel="stylesheet" href="/css/create.css">
+    {{-- <link rel="stylesheet" href="/css/create.css"> --}}
 
+    <style>
+        *{
+            background-color: #FDE5EC;
+            margin: 0px;
+            padding: 0px;
+        }
+        .container-bn{
+            width: 100%;
+            padding: 0 100px;
+            margin-right: 0px;
+            margin-left: 0px;
+        }
+        .form-control{
+            background-color: #fcd6db;
+        }
+        .btn{
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+        }
+        .btn:hover{
+            border: 1px solid black;
+            background-color: white;
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
 
     {{-- navigaionbar section --}}
-    <nav class="navbar navbar-expand-lg " >
-        <a class="navbar-brand" href="{{ route('store.index') }}">Men's Fashion Store</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="{{ route('store.index') }}">Home </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('store.create') }}">Add Items</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-    <div class="wallpaper">
-        <img src="/images/wallpaper2.jpg" alt="">
-    </div>
+    @include('components.navbar')
 
 
-    <div class="container">
+
+
+    <div class="container-bn">
+
+        <a class="btn mt-5" href="{{ route('store.stock') }}">Dashboard</a>
         <div class="form-con">
             <form action="{{ route('store.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Clothe Name</label>
-                    <input type="text" class="form-control" name="name" placeholder="Enter clothe name">
+                <div class="form-group mt-5">
+                    <label for=" exampleInputEmail1 ">Clothe Name</label>
+                    <input type="text" class="form-control mt-1" name="name" placeholder="Enter clothe name">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mt-3">
                     <label for="exampleInputEmail1">Description</label>
-                    <input type="text" class="form-control" name="description"
+                    <input type="text" class="form-control mt-1" name="description"
                         placeholder="Enter clothe description">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mt-3">
                     <label for="exampleInputEmail1">Quantity</label>
-                    <input type="number" class="form-control" name="quantity" placeholder="Enter clothe quantity">
+                    <input type="number" class="form-control mt-1" name="quantity" placeholder="Enter clothe quantity">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mt-3">
                     <label for="exampleInputEmail1">Price</label>
-                    <input type="number" class="form-control" name="price" placeholder="Enter clothe price">
+                    <input type="number" class="form-control mt-1" name="price" placeholder="Enter clothe price">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mt-3">
                     <label for="exampleInputEmail1">Image</label>
-                    <input type="file" class="form-control" name="image" placeholder="Enter clothe image">
+                    <input type="file" class="form-control mt-1" name="image" placeholder="Enter clothe image">
                 </div>
 
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn y mt-3">Submit</button>
             </form>
         </div>
 

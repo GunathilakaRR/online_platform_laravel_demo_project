@@ -14,7 +14,7 @@ class Store extends Model
         'clothe_desc',
         'clothe_quantity',
         'clothe_price',
-        '1'
+        'clothe_image'
     ];
 }
 

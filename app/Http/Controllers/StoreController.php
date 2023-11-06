@@ -37,12 +37,13 @@ class StoreController extends Controller
 
 
         $store->save();
-        return 'success';
+        return redirect()->back();
     }
 
 
     public function stock(){
         $stores = Store::all();
         return view('store.stock', compact('stores'));
+
     }
 }

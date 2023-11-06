@@ -30,26 +30,8 @@
 
           <!-- navbar -->
 
-          <nav class="navbar navbar-expand-lg  ">
-            <a class="navbar-brand" href="#">BLOSSOM</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+          @include('components.navbar')
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#features">SHOPPING</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('store.create') }}" class="nav-link" href="#footer">ADD ITEMS</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
 
 
 
@@ -70,12 +52,12 @@
 
       <div class="card-container">
         @foreach ($stores as $store)
-            <div class="card">
+            <div class="card-img">
                 <img src={{asset('uploads/stores/'.$store->clothe_img)}}
                     alt="" class="card-img-top">
                 <div class="card-content">
-                    <h3>{{ $store->clothe_name }}</h3>
-                    <p>{{ $store->clothe_price }}</p>
+                    <h3>{{str($store->clothe_name)->upper() }}</h3>
+                    <p>Rs.{{ $store->clothe_price }}/=</p>
                 </div>
             </div>
         @endforeach
